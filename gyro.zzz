@@ -1,0 +1,10 @@
+pkgs:
+  zui:
+    version: 0.0.0
+    description: A cross-platform GUI library for Zig.
+    license: MIT
+    source_url: "https://github.com/devins2518/zui"
+    root: src/main.zig
+    files:
+      README.md
+      LICENSE
