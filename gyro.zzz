@@ -1,6 +1,6 @@
 pkgs:
   zui:
-    version: 0.0.0
+    version: 0.0.1
     description: A cross-platform GUI library for Zig.
     license: MIT
     source_url: "https://github.com/devins2518/zui"
@@ -8,3 +8,7 @@ pkgs:
     files:
       README.md
       LICENSE
+      src/*.zig
+deps:
+  zobjc:
+    local: ../zobjc
