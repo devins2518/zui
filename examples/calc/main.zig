@@ -2,8 +2,13 @@ const std = @import("std");
 const zui = @import("zui");
 
 pub fn main() anyerror!void {
-    var window = zui.Window.init();
-    defer window.deinit();
+    var window = zui.Window.init(.{
+        .name = "Calculator",
+        .height = 600,
+        .width = 800,
+    });
+    _ = window;
+    // defer window.deinit();
 }
 
 const App = struct {

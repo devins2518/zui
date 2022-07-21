@@ -6,13 +6,13 @@ pub const pkgs = struct {
     pub const zui = Pkg{
         .name = "zui",
         .source = FileSource{
-            .path = "../../src/main.zig",
+            .path = "../src/main.zig",
         },
         .dependencies = &[_]Pkg{
             Pkg{
                 .name = "zobjc",
                 .source = FileSource{
-                    .path = "../../../zobjc/src/lib.zig",
+                    .path = "../../zobjc/src/lib.zig",
                 },
             },
         },

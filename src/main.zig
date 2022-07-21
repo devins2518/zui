@@ -3,5 +3,4 @@ pub const Window = @import("window.zig").Window;
 
 test "static analysis" {
     std.testing.refAllDecls(@This());
-    _ = @import("Window.zig");
 }

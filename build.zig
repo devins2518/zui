@@ -10,24 +10,20 @@ pub fn build(b: *std.build.Builder) void {
     target = b.standardTargetOptions(.{});
 
     const lib = b.addStaticLibrary("zui", "src/main.zig");
-    addFrameworks(lib);
+    lib.linkFramework("CoreFoundation");
+    lib.linkFrameworkNeeded("Cocoa");
     pkgs.addAllTo(lib);
     lib.setBuildMode(mode);
     lib.setTarget(target);
     lib.install();
 
     const main_tests = b.addTest("src/main.zig");
-    addFrameworks(lib);
+    main_tests.linkFramework("CoreFoundation");
+    main_tests.linkFrameworkNeeded("Cocoa");
     pkgs.addAllTo(main_tests);
     main_tests.setBuildMode(mode);
     main_tests.setTarget(target);
 
     const test_step = b.step("test", "Run library tests");
     test_step.dependOn(&main_tests.step);
-}
-
-fn addFrameworks(step: *std.build.LibExeObjStep) void {
-    if (target.isDarwin()) {
-        step.linkFramework("Cocoa");
-    }
 }
