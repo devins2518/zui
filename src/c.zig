@@ -1,3 +1,3 @@
 pub usingnamespace @cImport({
-    @cInclude("Cocoa/Cocoa.h");
+    @cInclude("CoreGraphics/CoreGraphics.h");
 });

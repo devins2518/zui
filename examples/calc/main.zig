@@ -7,8 +7,7 @@ pub fn main() anyerror!void {
         .height = 600,
         .width = 800,
     });
-    _ = window;
-    // defer window.deinit();
+    defer window.deinit();
 }
 
 const App = struct {

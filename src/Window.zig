@@ -9,8 +9,8 @@ const WaylandWindowFlags = @import("wayland/Window.zig").WaylandWindowFlags;
 
 pub const WindowFlags = struct {
     name: []const u8,
-    height: u16,
-    width: u16,
+    height: u16 = 600,
+    width: u16 = 800,
     x: u16 = 0,
     y: u16 = 0,
     macos_flags: ?MacOsWindowFlags = null,

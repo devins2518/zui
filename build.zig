@@ -10,16 +10,14 @@ pub fn build(b: *std.build.Builder) void {
     target = b.standardTargetOptions(.{});
 
     const lib = b.addStaticLibrary("zui", "src/main.zig");
-    lib.linkFramework("CoreFoundation");
-    lib.linkFrameworkNeeded("Cocoa");
+    lib.linkFramework("Cocoa");
     pkgs.addAllTo(lib);
     lib.setBuildMode(mode);
     lib.setTarget(target);
     lib.install();
 
     const main_tests = b.addTest("src/main.zig");
-    main_tests.linkFramework("CoreFoundation");
-    main_tests.linkFrameworkNeeded("Cocoa");
+    main_tests.linkFramework("Cocoa");
     pkgs.addAllTo(main_tests);
     main_tests.setBuildMode(mode);
     main_tests.setTarget(target);
